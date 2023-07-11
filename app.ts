@@ -144,38 +144,80 @@
 //////////////////////////////////////////
 
 //////////interfaces///////////
-interface User{
-    name: string,
-    age: number,
-    skills: string[]
+// interface User{
+//     name: string,
+//     age: number,
+//     skills: string[]
 
-    log:(id: string) => string;
-}
+//     log:(id: string) => string;
+// }
 
-interface Role{
-    roleId: number;
-}
+// interface Role{
+//     roleId: number;
+// }
 
-interface UserWithRole extends User, Role{
+// interface UserWithRole extends User, Role{
 
-}
+// }
 
-type User2 = {
-    name: string,
-    age: number,
-    skills: string[]
+// type User2 = {
+//     name: string,
+//     age: number,
+//     skills: string[]
 
-    log:(id: string) => string;
-}
+//     log:(id: string) => string;
+// }
 
-let u1: UserWithRole = {
-    name: 'Ivan',
-    age: 40,
-    skills: ["killer"],
-    roleId: 2,
+// let u1: UserWithRole = {
+//     name: 'Ivan',
+//     age: 40,
+//     skills: ["killer"],
+//     roleId: 2,
 
-    log(id){
-        return '';
-    }
-}
+//     log(id){
+//         return '';
+//     }
+// }
 ////////////////////////////////////
+
+/////////Optional/////////////////
+// interface User{
+//     username: string;
+//     password?: string;
+// }
+
+// const user:User = {
+//     username: 's@a.ru',
+// }
+
+// function multiply(first: number, second?:number):number{
+//     if(!second){
+//         return first*first;
+//     }
+//     return first * second;
+// }
+
+// multiply(5);
+
+// interface UserPro{
+//     username: string;
+//     password?: {
+//         type: 'primary' | 'secondary';
+//     }
+// }
+
+// const userpro: UserPro = {
+//     username: 'Alex',
+// }
+
+// function testPass(user: UserPro){
+//     return user.password?.type;//optional chaining
+// }
+
+// //Nullish coalising
+// function test(param?: number){
+//     const t = param ?? multiply(5);//if param===undefined or null to t=multiply(5)
+// }
+
+
+
