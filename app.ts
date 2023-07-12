@@ -220,4 +220,26 @@
 // }
 
 
+/////////////////Type guards
+interface User{
+    name: string;
+    age: number;
+    skills: string[];
+};
 
+interface Admin{
+    name: string;
+    role: number;
+};
+
+function isString(x: string | number): x is string{
+    return typeof x === 'string';
+}
+
+function isAdmin(user: User | Admin): user is Admin {
+    return 'role' in user;
+}
+
+function isAdminAlternative(user: Admin | User): user is Admin{
+    return (user as Admin).role !== undefined;
+}
